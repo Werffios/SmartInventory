@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Mobility_History extends Model
+{
+    protected $guarded = ['id', 'date_mobility', 'id_asset', 'id_location', 'id_status'];
+
+    use HasFactory;
+
+    //Relation to Asset, one to many
+    function asset() : BelongsTo
+    {
+        return $this->belongsTo(Asset::class);
+    }
+    //Relation to Location, one to many
+    function location() : BelongsTo
+    {
+        return $this->belongsTo(Location::class);
+    }
+    //Relation to Status, one to many
+    function status() : BelongsTo
+    {
+        return $this->belongsTo(Status::class);
+    }
+}
