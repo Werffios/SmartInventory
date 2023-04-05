@@ -21,7 +21,6 @@ class Asset extends Model
             return $query->where('department_id', $department_id);
         }
     }
-
     //Relation to Category, one to many
     function category() : BelongsTo
     {
@@ -68,7 +67,7 @@ class Asset extends Model
         return $this->hasMany(Mobility_History::class);
     }
     //Relation to Responsible, one to one
-    function responsible() : HasOne
+    public function responsible() : HasOne
     {
         return $this->hasOne(Responsible::class);
     }

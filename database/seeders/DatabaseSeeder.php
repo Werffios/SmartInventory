@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
             UserSeeder::class,
 
-            AssetSeeder::class
+            AssetSeeder::class,
+            ResponsibleSeeder::class,
         ]);
     }
 }

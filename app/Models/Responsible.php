@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Responsible extends Model
 {
-    protected $guarded = ['id', 'start_date', 'end_date', 'asset_id', 'person_id'];
+    protected $guarded = ['id', 'start_date', 'end_date', 'id_asset', 'id_person'];
 
     use HasFactory;
 

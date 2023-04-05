@@ -25,11 +25,11 @@ class AssetFactory extends Factory
             'placa' => $this->faker->unique()->randomNumber(6),
             'maintenance' => $this->faker->boolean(),
             'maintenance_frequency' => $this->faker->numberBetween(1, 4),
-            'category_id' => Category::factory(),
-            'department_id' => Department::factory(),
-            'location_id' => Location::factory(),
-            'model_id' => Model_Asset::factory(),
-            'status_id' => Status::factory(),
+            'category_id' => Category::all()->random()->id,
+            'department_id' => Department::all()->random()->id,
+            'location_id' => Location::all()->random()->id,
+            'model_id' => Model_Asset::all()->random()->id,
+            'status_id' => Status::all()->random()->id,
         ];
     }
 }
