@@ -13,6 +13,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'green-unal': {
+                    DEFAULT: '#94B43B', // el color predeterminado, se puede omitir si deseas
+                    'rgb': '148,180,59', // valor en RGB
+                },
+            }
         },
     },
 

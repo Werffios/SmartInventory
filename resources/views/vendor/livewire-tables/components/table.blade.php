@@ -24,7 +24,7 @@
         }}>
             <thead {{
                 $attributes->merge($customAttributes['thead'])
-                    ->class(['bg-gray-50 text-gray-900' => $customAttributes['thead']['default'] ?? true])
+                    ->class(['bg-gray-50 text-gray-900 ' => $customAttributes['thead']['default'] ?? true])
                     ->except('default')
             }}>
                 <tr>
@@ -38,7 +38,7 @@
 
                 {{
                     $attributes->merge($customAttributes['tbody'])
-                        ->class(['bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-none' => $customAttributes['tbody']['default'] ?? true])
+                        ->class(['bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-none ' => $customAttributes['tbody']['default'] ?? true])
                         ->except('default')
                 }}
             >

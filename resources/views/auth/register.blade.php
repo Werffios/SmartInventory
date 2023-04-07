@@ -2,11 +2,11 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-text-input placeholder="Tu correo electrónico" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -17,6 +17,7 @@
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
+                          placeholder="Tu contraseña"
                             required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
@@ -28,6 +29,7 @@
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
+                          placeholder="Confirma tu contraseña"
                             name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
