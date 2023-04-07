@@ -13,7 +13,7 @@ class AssetSeeder extends Seeder
      */
     public function run(): void
     {
-        Asset::Factory(10)->create();
+        Asset::Factory(100)->create();
         Asset::create([
             'placa' => '123457',
             'maintenance' => true,
