@@ -12,9 +12,9 @@
 @endphp
 
 @if ($theme === 'tailwind')
-    <div {{
+    <div class="dark:bg-red-800/20"{{
         $attributes->merge($customAttributes['wrapper'])
-            ->class(['shadow overflow-x-scroll border-b border-gray-200 dark:border-gray-700 sm:rounded-xl' => $customAttributes['wrapper']['default'] ?? true])
+            ->class(['shadow overflow-x-scroll border-b border-gray-20 dark:border-gray-700 sm:rounded-xl' => $customAttributes['wrapper']['default'] ?? true])
             ->except('default')
     }}>
         <table {{

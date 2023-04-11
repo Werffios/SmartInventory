@@ -2,9 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Str;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Asset;
+use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 
 class AssetTable extends DataTableComponent
 {
@@ -12,24 +17,58 @@ class AssetTable extends DataTableComponent
 
     public ?int $searchFilterDebounce = 250;
 
+    public bool $viewingModal = false;
+    public bool $currentModal = false;
+
+
     public function configure(): void
     {
-        $this->setPrimaryKey('id');
-        $this->setDefaultSort('assets.id', 'desc');
-        $this->setSingleSortingDisabled();
-        $this->setTheadAttributes([
-            'id' => 'idexample',
-            'class' => 'bg-green-un'
-        ]);
-        $this->setOfflineIndicatorEnabled();
+        $this
+            ->setPrimaryKey('id')
+            ->setDefaultSort('assets.id', 'desc')
+            ->setSingleSortingDisabled()
+            ->setTheadAttributes([
+                'id' => 'idexample',
+                'class' => 'bg-green-un',
+            ])
+
+            ->setHideBulkActionsWhenEmptyEnabled()
+            ->setOfflineIndicatorEnabled();
+
+
     }
 
     public function columns(): array
     {
-        return [ // searchable(), sortable(),
+        return [
+            ButtonGroupColumn::make('Actions')
+                ->attributes(function($row) {
+                    return [
+                        'class' => 'space-x-2',
+                    ];
+                })
+                ->buttons([
+                    LinkColumn::make('View') // make() has no effect in this case but needs to be set anyway
+                    ->title(fn($row) => 'View ' . $row->name)
+                        ->location(fn($row) => route('login', $row))
+                        ->attributes(function($row) {
+                            return [
+                                'class' => 'underline text-blue-500 hover:no-underline',
+                            ];
+                        }),
+                    LinkColumn::make('Edit')
+                        ->title(fn($row) => 'Edit ' . $row->name)
+                        ->location(fn($row) => route('login', $row))
+                        ->attributes(function($row) {
+                            return [
+                                'class' => 'underline text-blue-500 hover:no-underline ',
+                            ];
+                        }),
+                ]),
             Column::make("Placa", "placa")
                 ->searchable()
                 ->html(),
+
             Column::make("Categoría", "category.name")
                 ->sortable()
                 ->collapseOnTablet()
@@ -41,13 +80,6 @@ class AssetTable extends DataTableComponent
             Column::make("Ubicación", "location.name")
                 ->sortable()
                 ->searchable(),
-            Column::make("Modelo", "model.name")
-                ->sortable()
-                ->collapseOnTablet(),
-            Column::make("Estado", "status.name")
-                ->sortable()
-                ->collapseOnTablet()
-                ->searchable(),
 
             //Column::make("Responsable", "responsible.name")
             //    ->sortable()
@@ -55,12 +87,11 @@ class AssetTable extends DataTableComponent
 
 
 
-            Column::make("Mant.", "maintenance")
+            BooleanColumn::make("Mant.", "maintenance")
                 ->collapseOnTablet()
                 ->sortable(),
-            Column::make("Frec. (años)", "maintenance_frequency")
-                ->collapseOnTablet()
-                ->sortable(),
+
         ];
     }
+
 }
