@@ -25,6 +25,6 @@ class ResponsibleSeeder extends Seeder
             'asset_id' => 101,
             'person_id' => 2
         ]);
-        Responsible::factory(48)->create();
+        Responsible::factory(100)->create();
     }
 }

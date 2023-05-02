@@ -21,7 +21,7 @@ class ResponsibleFactory extends Factory
         return [
             'start_date' => $this->faker->date(),
             'end_date' => $this->faker->date(),
-            'asset_id' => Asset::all()->Random()->id,
+            'asset_id' => $this->faker->unique()->numberBetween(1, Asset::count()-2),
             'person_id' => Person::all()->Random()->id,
         ];
     }
