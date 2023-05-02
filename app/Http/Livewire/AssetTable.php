@@ -58,7 +58,7 @@ class AssetTable extends DataTableComponent
             //    ->sortable()
             //    ->searchable(),
 
-            Column::make("Responsable", "responsible.id")
+            Column::make("Responsable", "responsible.person.name")
                 ->sortable()
                 ->searchable(),
             BooleanColumn::make("Mantenimiento", "maintenance")
