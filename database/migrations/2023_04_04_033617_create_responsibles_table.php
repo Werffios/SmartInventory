@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->date('start_date')->notNullValue();
             $table->date('end_date')->nullable();
-            $table->unsignedBigInteger('id_asset')->notNullValue();
-            $table->unsignedBigInteger('id_person')->notNullValue();
-            $table->foreign('id_asset')->references('id')->on('assets')->onDelete('cascade');
-            $table->foreign('id_person')->references('id')->on('people')->onDelete('cascade');
+            $table->unsignedBigInteger('asset_id')->notNullValue();
+            $table->unsignedBigInteger('person_id')->notNullValue();
+            $table->foreign('asset_id')->references('id')->on('assets')->onDelete('cascade');
+            $table->foreign('person_id')->references('id')->on('people')->onDelete('cascade');
 
             $table->timestamps();
         });

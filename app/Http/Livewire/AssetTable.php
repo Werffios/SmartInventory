@@ -15,11 +15,9 @@ use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 class AssetTable extends DataTableComponent
 {
     protected $model = Asset::class;
-
     public ?int $searchFilterDebounce = 250;
 
-    public bool $viewingModal = false;
-    public bool $currentModal = false;
+    public bool $isModalOpen = true;
 
 
     public function configure(): void
@@ -32,40 +30,14 @@ class AssetTable extends DataTableComponent
                 'id' => 'idexample',
                 'class' => 'bg-green-un',
             ])
-
             ->setHideBulkActionsWhenEmptyEnabled()
             ->setOfflineIndicatorEnabled();
-
-
     }
 
     public function columns(): array
     {
         return [
-            ButtonGroupColumn::make('Actions')
-                ->attributes(function($row) {
-                    return [
-                        'class' => 'space-x-2',
-                    ];
-                })
-                ->buttons([
-                    LinkColumn::make('View') // make() has no effect in this case but needs to be set anyway
-                    ->title(fn($row) => 'View ' . $row->name)
-                        ->location(fn($row) => route('login', $row))
-                        ->attributes(function($row) {
-                            return [
-                                'class' => 'underline text-blue-500 hover:no-underline',
-                            ];
-                        }),
-                    LinkColumn::make('Edit')
-                        ->title(fn($row) => 'Edit ' . $row->name)
-                        ->location(fn($row) => route('login', $row))
-                        ->attributes(function($row) {
-                            return [
-                                'class' => 'underline text-blue-500 hover:no-underline ',
-                            ];
-                        }),
-                ]),
+
             Column::make("Placa", "placa")
                 ->searchable()
                 ->html(),
@@ -82,13 +54,14 @@ class AssetTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
 
-            //Column::make("Responsable", "responsible.name")
+            //Column::make("Responsable", "responsible.person.name")
             //    ->sortable()
             //    ->searchable(),
 
-
-
-            BooleanColumn::make("Mant.", "maintenance")
+            Column::make("Responsable", "responsible.id")
+                ->sortable()
+                ->searchable(),
+            BooleanColumn::make("Mantenimiento", "maintenance")
                 ->collapseOnTablet()
                 ->sortable(),
 
