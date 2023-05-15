@@ -28,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('assets/{asset}', function ($asset) {
+    return('Aqui se editara'); ## return view('assets.edit');
+})->middleware(['auth', 'verified'])->name('asset.edit');
 require __DIR__.'/auth.php';
