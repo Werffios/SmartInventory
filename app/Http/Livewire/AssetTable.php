@@ -21,8 +21,6 @@ class AssetTable extends DataTableComponent
         $this
             ->setPrimaryKey('id')
 
-
-
             ->setDefaultSort('assets.id', 'desc')
             ->setSingleSortingDisabled()
             ->setTheadAttributes([
@@ -33,21 +31,11 @@ class AssetTable extends DataTableComponent
             ->setOfflineIndicatorEnabled()
             ->setBulkActionsEnabled();
 
-        $this->setBulkActions([
-            'exportSelected' => 'Export',
-        ]);
-    }
-    public function edit($id)
-    {
-        $this->emit('editAsset', $id);
     }
 
     public function columns(): array
     {
         return [
-            Column::make("ID", "id")
-                ->sortable()
-                ->searchable(),
             Column::make("Placa", "placa")
                 ->searchable()
                 ->html(),
@@ -73,16 +61,4 @@ class AssetTable extends DataTableComponent
 
         ];
     }
-
-    public function bulkActions(): array
-    {
-        return [
-            'export' => 'Export',
-        ];
-    }
-    public function query(): Builder
-    {
-        return User::query();
-    }
-
 }
