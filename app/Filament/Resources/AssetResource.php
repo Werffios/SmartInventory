@@ -5,7 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AssetResource\Pages;
 use App\Filament\Resources\AssetResource\RelationManagers;
 use App\Models\Asset;
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Department;
+use App\Models\Location;
+use App\Models\Model_Asset;
+use App\Models\Status;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -19,11 +24,12 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Filters\SelectFilter;
 class AssetResource extends Resource
 {
     protected static ?string $model = Asset::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-table';
 
     public static function form(Form $form): Form
     {
@@ -40,8 +46,7 @@ class AssetResource extends Resource
                     ->maxLength(10)
                     ->placeholder('Ingrese la placa del activo')
                     ->helperText('Escribe la placa del activo.')
-                    ->unique('assets', 'placa')
-
+                    ->disableAutocomplete()
                     ->hint('La placa debe ser única.'),
                 Select::make('maintenance')->label('¿Requiere mantenimiento? ')
                     ->required()
@@ -60,6 +65,14 @@ class AssetResource extends Resource
                         'semestral' => 'Semestral',
                         'anual' => 'Anual',
                     ]),
+                Select::make('category_id')->label('Categoría')
+                    ->placeholder('Seleccione la categoría')
+                    ->options(
+                        Category::all()->pluck('name', 'id')
+                    )
+                    ->required()
+                    ->searchable()
+                    ->helperText('Seleccione la categoría.'),
                 Select::make('department_id')->label('Departamento')
                     ->placeholder('Seleccione el departamento')
                     ->options(
@@ -68,6 +81,30 @@ class AssetResource extends Resource
                     ->required()
                     ->searchable()
                     ->helperText('Seleccione el departamento.'),
+                Select::make('location_id')->label('Ubicación')
+                    ->placeholder('Seleccione la ubicación')
+                    ->options(
+                        Location::all()->pluck('name', 'id')
+                    )
+                    ->required()
+                    ->searchable()
+                    ->helperText('Seleccione la ubicación.'),
+                Select::make('model_id')->label('Modelo')
+                    ->placeholder('Seleccione el modelo')
+                    ->options(
+                        Model_Asset::all()->pluck('name', 'id')
+                    )
+                    ->required()
+                    ->searchable()
+                    ->helperText('Seleccione el modelo.'),
+                Select::make('status_id')->label('Estado')
+                    ->placeholder('Seleccione el estado')
+                    ->options(
+                        Status::all()->pluck('name', 'id')
+                    )
+                    ->required()
+                    ->searchable()
+                    ->helperText('Seleccione el estado.'),
 
             ]);
     }
@@ -96,7 +133,28 @@ class AssetResource extends Resource
 
             ])
             ->filters([
-                //
+                SelectFilter::make('department_id')
+                    ->label('Departamento')
+                    ->options(
+                        Department::all()->pluck('name', 'id')
+                    )
+                    ->searchable()
+                    ->default(null),
+                SelectFilter::make('location_id')
+                    ->label('Ubicación')
+                    ->options(
+                        Location::all()->pluck('name', 'id')
+                    )
+                    ->searchable()
+                    ->default(null),
+                SelectFilter::make('category_id')
+                    ->label('Categoría')
+                    ->options(
+                        Category::all()->pluck('name', 'id')
+                    )
+                    ->searchable()
+                    ->default(null),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
