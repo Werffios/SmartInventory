@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Asset extends Model
 {
-    protected $guarded = ['id', 'placa', 'department_id', 'location_id'];
-
+    // protected $guarded = ['id', 'placa', 'department_id', 'location_id'];
+    protected $fillable = ['placa', 'maintenance', 'maintenance_frequency', 'category_id', 'department_id', 'location_id', 'model_id', 'status_id'];
     use HasFactory;
 
     // Function to filter by department

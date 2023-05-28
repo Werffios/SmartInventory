@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
             $table->string('placa')->notNullValue()->unique();
-            $table->boolean('maintenance')->default(true);
+            $table->boolean('maintenance')->default(1);
             $table->string('maintenance_frequency');
             // $table->string('slug');
 
