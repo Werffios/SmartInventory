@@ -124,13 +124,15 @@ class AssetResource extends Resource
                     ->trueIcon('heroicon-o-badge-check')
                     ->falseIcon('heroicon-o-x-circle')
                     ->sortable(),
+                TextColumn::make('category.name')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('department.name')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('model.brand.name')
                     ->searchable()
                     ->sortable(),
-
             ])
             ->filters([
                 SelectFilter::make('department_id')
@@ -157,6 +159,7 @@ class AssetResource extends Resource
 
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
