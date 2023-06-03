@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AssetResource\Pages;
 use App\Filament\Resources\AssetResource\RelationManagers;
+use App\Filament\Resources\AssetResource\Widgets\AssetStatsOverview;
 use App\Models\Asset;
 use App\Models\Brand;
 use App\Models\Category;
@@ -172,6 +173,12 @@ class AssetResource extends Resource
     {
         return [
             //
+        ];
+    }
+    public static function getWidgets(): array
+    {
+        return [
+            \App\Filament\Resources\AssetResource\Widgets\AssetStatsOverview::class,
         ];
     }
 

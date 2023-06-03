@@ -16,4 +16,11 @@ class ListAssets extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+
+        ];
+    }
 }
