@@ -12,7 +12,6 @@ use App\Models\Department;
 use App\Models\Location;
 use App\Models\Model_Asset;
 use App\Models\Status;
-use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -118,13 +117,15 @@ class AssetResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->copyable()
-                    ->copyMessage('Email address copied')
+                    ->copyMessage('Copiado al portapapeles.')
                     ->copyMessageDuration(1500),
                 IconColumn::make('maintenance')
                     ->boolean()
                     ->trueIcon('heroicon-o-badge-check')
                     ->falseIcon('heroicon-o-x-circle')
+                    ->toggleable(isToggledHiddenByDefault: false)
                     ->sortable(),
+
                 TextColumn::make('category.name')
                     ->searchable()
                     ->sortable(),
@@ -134,7 +135,7 @@ class AssetResource extends Resource
                 TextColumn::make('model.brand.name')
                     ->searchable()
                     ->sortable(),
-            ])
+            ])->defaultSort('id', 'desc')
             ->filters([
                 SelectFilter::make('department_id')
                     ->label('Departamento')
@@ -179,6 +180,7 @@ class AssetResource extends Resource
     {
         return [
             \App\Filament\Resources\AssetResource\Widgets\AssetStatsOverview::class,
+            \App\Filament\Resources\AssetResource\Widgets\LatestAssets::class,
         ];
     }
 

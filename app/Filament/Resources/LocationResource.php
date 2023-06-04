@@ -18,7 +18,7 @@ class LocationResource extends Resource
 {
     protected static ?string $model = Location::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-location-marker';
     protected static ?string $navigationGroup = 'Administración';
     public static function form(Form $form): Form
     {
@@ -40,7 +40,7 @@ class LocationResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('name')->label('Nombre de la ubicación')
                     ->searchable()
                     ->sortable(),
             ])

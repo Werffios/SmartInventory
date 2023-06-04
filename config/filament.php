@@ -141,6 +141,7 @@ return [
         'register' => [
             Widgets\AccountWidget::class,
             \App\Filament\Resources\AssetResource\Widgets\AssetStatsOverview::class,
+            \App\Filament\Resources\AssetResource\Widgets\LatestAssets::class,
         ],
     ],
 
