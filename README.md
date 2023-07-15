@@ -23,7 +23,10 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
 ![Dashboard de administrador](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardAdmin.png)
 
 > Asi se ve la interfaz de administrador para gestionar activos.
-> ![Gestion de activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ActivosAdmin.png)
+![Gestion de activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ActivosAdmin.png)
+
+> Asi se ve la interfaz de administrador para gestionar roles
+![Gestion de roles](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ControlRoles.png)
 
 ## Technologies Used:
 * PHP 8.2.2 
