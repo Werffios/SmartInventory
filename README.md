@@ -86,9 +86,9 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
 14. Abre la aplicación en tu navegador. La URL por defecto es `http://localhost:8000` para invitado
  y`http://localhost:8000/admin` para admin.
 
-<p align="center"><a href="https://github.com/Werffios/" target="_blank">
+<!--- <p align="center"><a href="https://github.com/Werffios/" target="_blank">
 <img style="padding: 1px; border-radius: 50%; border: 2px solid #ccc; border-color: #ccc;" src="https://avatars.githubusercontent.com/u/74946697?v=4" width="200" alt="Autor: Nicolás Suárez"></a></p>
-
+-->
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=werffios&&show_icons=true&theme=radical" alt="Pramod's Github Stats">
 </div>
