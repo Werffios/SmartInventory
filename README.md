@@ -19,14 +19,35 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
 > Asi se ve la interfaz de visitante, donde se pueden consultar activos, categorias, ubicaciones y gestionar datos del perfil, también posee acceso a la vista de administrador siempre que el rol lo permita.
 ![Dashboard de visitante](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardVisitante.png)
 
+> Asi se ve la interfaz de visitante en blanco (modo white)
+![Dashboard de visitante en blanco](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardVisitanteWhite.png)
+
 > Asi se ve la interfaz de administrador.
 ![Dashboard de administrador](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardAdmin.png)
+
+> Asi se ve la interfaz de administrador en blanco (modo white)
+![Dashboard de administrador en blanco](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardAdminWhite.png)
 
 > Asi se ve la interfaz de administrador para gestionar activos.
 ![Gestion de activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ActivosAdmin.png)
 
+> Asi se ve la interfaz de administrador para editar activos.
+![Editar activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/EditActivo.png)
+
+> Asi se ve la interfaz de administrador para ver detalles de activos.
+![Detalles de activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ViewActivo.png)
+
 > Asi se ve la interfaz de administrador para gestionar roles
 ![Gestion de roles](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ControlRoles.png)
+
+> Asi se ve la interfaz de ingreso para el administrador.
+![Login de administrador](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/LoginAdmin.png)
+
+> Asi se ve la interfaz de ingreso para el visitante.
+![Login de visitante](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/LoginVisitante.png)
+
+> Asi se ve la interfaz de registro para el visitante.
+![Registro de visitante](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/RegisterVisitante.png)
 
 ## Technologies Used:
 * PHP 8.2.2 
