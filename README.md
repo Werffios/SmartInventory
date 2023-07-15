@@ -12,6 +12,19 @@
 # Smart Inventory
 Sistema de inventario para la gestión de activos, proyecto desarrollado como requisito para la asignatura de Ingeniería de Software II.
 
+Como plataforma de gestión integral de inventarios, nuestra solución SMART INVENTORY está diseñada específicamente para satisfacer las necesidades de las universidades en cuanto a la gestión de activos. Con nuestra plataforma, los administradores, profesores y personal de apoyo de la universidad podrán llevar un control completo y actualizado de todos los activos de la institución, desde equipos de laboratorio hasta mobiliario y otros bienes.
+
+Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier lugar con conexión a internet, lo que permitirá a los usuarios realizar un seguimiento eficiente de los activos y su estado en tiempo real. Además, nuestra solución ofrecerá una amplia gama de herramientas y funciones para que los usuarios gestionen sus tareas de manera más eficiente.
+
+> Asi se ve la interfaz de visitante, donde se pueden consultar activos, categorias, ubicaciones y gestionar datos del perfil, también posee acceso a la vista de administrador siempre que el rol lo permita.
+![Dashboard de visitante](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardVisitante.png)
+
+> Asi se ve la interfaz de administrador.
+![Dashboard de administrador](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/DashboardAdmin.png)
+
+> Asi se ve la interfaz de administrador para gestionar activos.
+> ![Gestion de activos](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/ActivosAdmin.png)
+
 ## Technologies Used:
 * PHP 8.2.2 
 * Laravel 10 
