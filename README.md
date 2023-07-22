@@ -39,7 +39,7 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
 > Asi se ve la interfaz de registro para el visitante.
 ![Registro de visitante](https://raw.githubusercontent.com/Werffios/SmartInventory-April/master/images/RegisterVisitante.png)
 
-## Technologies Used:
+## Tecnologias usadas:
 * PHP 8.2.2 
 * Laravel 10 
 * Tailwind 
@@ -54,7 +54,7 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
 3. Navega hasta el directorio donde deseas clonar el proyecto de Laravel. Puedes utilizar el comando `cd` para cambiar de directorio. 
 4. Clona el repositorio en tu computadora.
     ```bash
-    git clone https://github.com/Werffios/SmartInventory-April.git
+    https://github.com/Werffios/SmartInventory.git
     ```
 5. Navega al directorio recién clonado.
     ```bash
