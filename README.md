@@ -58,7 +58,7 @@ Nuestro sistema de inventarios web es fácil de usar y accesible desde cualquier
     ```
 5. Navega al directorio recién clonado.
     ```bash
-    cd SmartInventory-April
+    cd SmartInventory
     ```
 6. Instala las dependencias del proyecto.
     ```bash
